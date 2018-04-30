@@ -7,7 +7,7 @@ useGPU = false;
 
 %% pre-trained model
 %model = "data/mnist-baseline/net-epoch-20";
-model = "data/mnist/net-epoch-20"; % model name
+model = "data/mnist-extra/net-epoch-20"; % model name
 load(model);
 net = vl_simplenn_tidy(net);
 
@@ -20,7 +20,7 @@ real_labels = imdb.images.labels(1,imdb.images.set == 3);
 
 %% prediction
 sigma = 0; % noise level
-degree = 0; % rotation degree 
+degree = 180; % rotation degree 
 
 pre_labels = zeros(1, length(real_labels));
 for i = 1:length(real_labels)
